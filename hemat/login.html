@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - login/signup form animation</title>
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+    <div class="title-text">
+      <div class="title login"> وارد شوید</div>
+      <div class="title signup">ثبت نام کنید </div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">ورود</label>
+        <label for="signup" class="slide signup">ثبتنام</label>
+        <div class="slider-tab"></div>
+      </div>
+  
+      <div class="form-inner">
+        <form action="#" class="login">
+          <div class="field">
+            <input type="text" id="codemeliforlogin" placeholder="کدملی" required>
+          </div>
+          <div class="field">
+            <input type="text" id="phonNumberforlogin" placeholder="شماره تماس" required>
+          </div>
+          <!-- <div class="pass-link"><a href="#">Forgot password?</a></div> -->
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" id="login1" value="ورود">
+          </div>
+          <div class="signup-link"> حسبا ندارد؟ <a href=""> ثبتنام کنید</a></div>
+        </form>
+        <form action="#" class="signup">
+          <div class="field">
+            <input type="text" id="name" placeholder="نام و نام خانواگی" required>
+          </div>
+          <div class="field">
+            <input type="text" id="codemeli" placeholder=" کدملی" required>
+          </div>
+          <div class="field">
+            <input type="text" id="phonNumber" placeholder=" شماره تماس" required>
+          </div>
+          <div class="field">
+            <input type="text" id="address" placeholder="ادرس " required>
+          </div>
+          <div class="field">
+            <input type="text" id="nameFader" placeholder="نام پدر" required>
+          </div>
+        
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input id="sabt" type="submit" value="ثبت نام">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- partial -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script  src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, "sans-serif";
+  padding-top: 3rem;
+}
+
+/* Header config */
+.header_prin {
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+.header_prin > h2, span {
+  color: black;
+  margin: 0rem 1rem;
+  font-size: 1.3rem;
+}
+.icon_shop {
+  cursor: pointer;
+  border-radius: 1.5rem;
+  padding: 0.4rem;
+  background: #EBEDEF;
+}
+.desplegado {
+  background: #F5B7B1;
+  color: #CB4335;
+  transition: 0.2s ease;
+}
+/*--- Card shopcar config ---*/
+.cont-carShop {
+  display: none;
+  position: fixed;
+  right: 0px;
+  z-index: 1;
+}
+.act-carShop {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0.3rem;
+  border-radius: 20px;
+  border: 1px solid #ABB2B9;
+  background: white;
+  padding: 1rem;
+  width: 20rem;
+  height: auto;
+  transition: 0.7s ease;
+  box-shadow: 0px 48px 60px rgba(0, 0, 0, 0.09), 0px 24.3px 26.1562px rgba(0, 0, 0, 0.06075), 0px 9.6px 9.75px rgba(0, 0, 0, 0.045), 0px 2.1px 3.46875px rgba(0, 0, 0, 0.02925);
+}
+.act-carShop > hr {
+  margin-top: 4px;
+}
+
+/*--- Contenedor de tarjetas de articulos ---*/
+.cont-art {
+  height: 12.5rem;
+  margin-top: 0.5rem;
+  overflow-y: scroll;
+}
+/*--- Tarjetas de articulos en el carrito ---*/
+.shop-card {
+  display: flex;
+  align-items: center;
+  background: #e9e9e9;
+  color: #5D6D7E;
+  border-radius: 1rem;
+  width: auto;
+  overflow: hidden;
+  height: 3.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  transition: 0.6s ease;
+}
+.shop-card img {
+  width: 3.5rem;
+  height: inherit;
+  object-fit: cover;
+}
+.na-pri-pro {
+  display: flex;
+  height: inherit;
+  width: 15rem;
+  justify-content: center;
+  flex-direction: column;
+}
+.na-pri-pro h5 {
+  color: #002153;
+  font-size: 15px;
+}
+.na-pri-pro p {
+  color: #787878;
+  font-size: 11px;
+  margin-left: 2px;
+  overflow-x: hidden;
+}
+.pro_price {
+  display: flex;
+  border: 1px solid blue;
+  align-items: center;
+  color: #ff4040;
+  font-size: 13px;
+  border: 0px solid blue;
+  height: inherit;
+}
+.icon_clear {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+  color: gray;
+}
+.icon_clear:hover {
+  color: red;
+}
+
+/*--- Botones de compra y limpiado ---*/
+.selec-art {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding-top: 1rem;
+}
+.selec-art a {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  margin-right: 0.8rem;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  background: #FF5D00;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+.selec-art a:hover {
+  background: #FF823A;
+  transition: 0.3s ease;
+}
+.selec-art div {
+  display: flex;
+  right: 0px;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 2rem;
+  background: #03045e;
+  color: white;
+  font-size: 1.5rem;
+}
+.selec-art div:hover {
+  background: #02037F;
+  transition: 0.3s ease;
+}
+/*--- Tarjeta modal de confirmacion ---*/
+.modal-card {
+  display: none;
+  position: fixed;
+  right: 0px;
+  z-index: 1;
+}
+.act-modal-card {
+  display: flex;
+  font-weight: 500;
+  top: 24rem;
+  flex-direction: column;
+  margin: 0.3rem 0.3rem;
+  border-radius: 20px;
+  background: white;
+  padding: 1rem;
+  width: 20rem;
+  height: auto;
+  transition: 0.7s ease;
+  box-shadow: 0px 48px 60px rgba(0, 0, 0, 0.09), 0px 24.3px 26.1562px rgba(0, 0, 0, 0.06075), 0px 9.6px 9.75px rgba(0, 0, 0, 0.045), 0px 2.1px 3.46875px rgba(0, 0, 0, 0.02925);
+}
+
+.selec-confirm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  height: auto;
+}
+.selec-confirm > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: white;
+  height: 45px;
+}
+.selec-confirm a:nth-child(1) {
+  width: 100%;
+  margin-right: 0.8rem;
+  border: 3px solid #03045e;
+  color: #03045e;
+}
+.selec-confirm a:nth-child(1):hover {
+  background: #03045e;
+  color: #fff;
+  transition: 0.3s ease;
+}
+.selec-confirm a:nth-child(2) {
+  width: 12rem;
+  background: #03045E;
+}
+.selec-confirm a:nth-child(2):hover {
+  background: #02037F;
+}
+
+/* Section 1 config */
+.sect_1 {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.cont_prin > img {
+  object-fit: cover;
+  width: 100%;
+  height: 15rem;
+}
+
+/*--- Bar Bottom ---*/
+.bar_bottom {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  top: 15rem;
+  left: 0px;
+  right: 0px;
+  max-width: 40rem;
+  height: auto;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  margin: 0rem auto;
+  background: linear-gradient(30deg, royalblue, purple);
+}
+.bar_bottom hr {
+  height: 2.5rem;
+}
+.bar_bottom p {
+  color: whitesmoke;
+  font-family: Inter, "sans-serif";
+  font-size: 13px;
+  width: 35%;
+}
+
+/* Section 2 config */
+.sect_2 {
+  width: 100%;
+  padding: 0.5rem;
+}
+.sect_2 > h1 {
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+}
+.container_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  width: 30%;
+  min-width: 12rem;
+  height: auto;
+  border-radius: 20px;
+  background: #f5f5f5;
+  overflow: hidden;
+  margin: 0.5rem 0.5rem;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+  height: 7rem;
+}
+.card h3 {
+  margin: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+}
+.card h5 {
+  color: gray;
+  margin: 0.5rem 0.7rem;
+}
+.card .price {
+  color: red;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+}
+.btn-add {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  padding: 0.8rem;
+}
+.btn-add:hover {
+  background: #FF5733;
+  color: white;
+  border: 1px solid #FF5733;
+}
+
+/* Footer config */
+footer {
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.5rem 1rem 2.5rem 1rem;
+  border: 1px solid gray;
+  border-radius: 20px 20px 0px 0px;
+  background: white;
+}
+footer p {
+  font-family: Inter "sans-serif";
+  color: gray;
+  font-size: 1rem;
+  width: 95%;
+  max-width: 50rem;
+}
+label{
+display: flex;
+justify-content: end;}
+.bi{
+  color: red;
+  font-size: 10px;
+}
+#ad{
+  margin-top: 100px;
+}
+#licence{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+#c{
+  color: blue;
+}
+.ads{
+    display: flex;
+    justify-content: space-around;
+}
+#myads{
+    margin-top: 100px;
+    width: 120px;
+}
